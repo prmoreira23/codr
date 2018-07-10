@@ -3,6 +3,6 @@ class User < ApplicationRecord
   has_many :quizzes
 
   def total_points
-    self.score_boards.map {|score| score.score }.reduce {|acc, ea| acc + ea}
+    self.score_boards.map {|score| score.score }.reduce(0) {|acc, ea| acc + ea}
   end
 end
