@@ -29,7 +29,6 @@ class App {
       <label>Username:
       <input type="text" id="form_username" name="username" value="">
       </label>
-      <br>
       <button type="submit" name="button">Login</button>
       </form>
       </div>
@@ -50,6 +49,3 @@ class App {
       $("#welcome_message").remove()
     }
 }
-// document.addEventListener("DOMContentLoaded", function(event){
-//
-// });
