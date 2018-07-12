@@ -4,8 +4,14 @@ class Api::V1::UsersController < ApplicationController
     render json: @user
   end
 
+  def scores
+
+    @users = User.all
+    render json: @users
+  end
+
   private
   def find_user
-    @user = User.find_or_create_by(username: params[:username])
+    @user = User.find_or_create_by(username: params[:username].downcase)
   end
 end

@@ -1,5 +1,7 @@
 let currentUser;
 let currentQuiz;
+let currentQuestion = 0;
+let totalPoints = 0;
 
 $(document).ready(main);
 
