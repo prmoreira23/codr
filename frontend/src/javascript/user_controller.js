@@ -21,7 +21,6 @@ function quizFunc(){
               $('#quiz').show();
               $('#loadbar').fadeOut();
             } else {
-
               let scoreBoard = {
                 quiz_id: currentQuiz.id,
                 user_id: currentUser.id,
@@ -30,7 +29,6 @@ function quizFunc(){
               Adapter.createScoreBoard(scoreBoard)
               .then((score) => {
                 UserController.displayScores()});
-
             }
     	}, 1000);
     });
@@ -47,9 +45,11 @@ function quizFunc(){
 
         if (ck != $ans){
             // return 'INCORRECT';
+            new Audio('./src/audio/wat.mp3').play();
             return `&#10060 INCORRECT`;
       }  else{
             totalPoints += 20;
+            new Audio('./src/audio/woohoo.mp3').play()
             return `&#9989 CORRECT`;
           }
     };
@@ -59,7 +59,17 @@ function quizFunc(){
 class UserController {
 
   static startGame() {
-    alert(currentUser.message());
+    let html = `
+    <ul class="nav navbar-nav">
+      <li><a href="#">${currentUser.message()}</a> </li>
+      <li><a id="logout_button" href="#">Logout</a></li>
+    </ul>
+    `;
+    $("#user_message").append($.parseHTML(html));
+    $("#logout_button").on('click', function(event){
+      App.init();
+    });
+    // alert(currentUser.message());
     Adapter.getQuiz(currentUser.id)
     .then(quiz => new Quiz(quiz))
     .then(quiz => currentQuiz = quiz)
@@ -77,6 +87,7 @@ class UserController {
     $("#content").empty();
     $("#content").append(div);
     var $quizBox = $("#quiz_box");
+    Prism.highlightElement($("code")[0]);
     quizFunc();
     $quizBox.fadeIn(1000);
   }
@@ -87,7 +98,11 @@ class UserController {
       var div = ScoreBoardController.renderScores(scores);
       $("#content").empty();
       let header = $.parseHTML("<h1>Top 10 Scores</h1>");
-      $("#content").append(header, div);
+      let button = $.parseHTML("<button>Play Again?</button>");
+      $("#content").append(header, div, button);
+      $("button").on('click', function(){
+        UserController.startGame();
+      });
       var $scoreTable = $("#score_table");
       $scoreTable.fadeIn(1500);
     });

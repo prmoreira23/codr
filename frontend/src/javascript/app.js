@@ -13,6 +13,11 @@ function main(){
 
 class App {
     static init(){
+      $("#user_message").empty();
+      currentUser = undefined;
+      currentQuiz = undefined;
+      currentQuestion = 0;
+      totalPoints = 0;
       $("#content").empty();
       let welcomeH1 = $.parseHTML("<h1 id='welcome_message' class='mt-5' style='display: none;'>WELCOME</h1>");
       $("#content").append(welcomeH1);

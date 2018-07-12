@@ -9,14 +9,12 @@ class Quiz {
   renderQuiz(i) {
     let question = currentQuiz.questions[i];
     let html = `
+</div>
     <div id="quiz_box" class="modal-dialog" style="display: none;">
       <div class="modal-content">
          <div class="modal-header">
             <h3><span class="label label-warning" id="qid">${i+1}/5</span> What does the code below return?</h3>
-            <pre><code class="language-javascript">
-              ${question.text}
-            </code></pre>
-        </div>
+            <pre><code class="language-javascript">${question.text}</code></pre>
         <div class="modal-body">
             <div class="col-xs-3 col-xs-offset-5">
                <div id="loadbar" style="display: none;">

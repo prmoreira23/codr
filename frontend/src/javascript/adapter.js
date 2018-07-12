@@ -1,8 +1,8 @@
-const BASE_URL_USERS = "http://localhost:3000/api/v1/users/";
-const BASE_URL_QUIZZES = "http://localhost:3000/api/v1/quizzes";
-const BASE_URL_SCORES = "http://localhost:3000/api/v1/scores";
-const BASE_URL_ANSWERS = "http://localhost:3000/api/v1/answers";
-const BASE_URL_SCOREBOARD = "http://localhost:3000/api/v1/scoreboards";
+const BASE_URL_USERS = "http://10.39.108.87:3000/api/v1/users/";
+const BASE_URL_QUIZZES = "http://10.39.108.87:3000/api/v1/quizzes";
+const BASE_URL_SCORES = "http://10.39.108.87:3000/api/v1/scores";
+const BASE_URL_ANSWERS = "http://10.39.108.87:3000/api/v1/answers";
+const BASE_URL_SCOREBOARD = "http://10.39.108.87:3000/api/v1/scoreboards";
 
 
 
