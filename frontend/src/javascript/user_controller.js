@@ -45,11 +45,13 @@ function quizFunc(){
 
         if (ck != $ans){
             // return 'INCORRECT';
-            new Audio('./src/audio/wat.mp3').play();
+            // new Audio('./src/audio/wat.mp3').play();
+            $("#wat")[0].play()
             return `&#10060 INCORRECT`;
       }  else{
             totalPoints += 20;
-            new Audio('./src/audio/woohoo.mp3').play()
+            // new Audio('./src/audio/woohoo.mp3').play()
+            $("#woohoo")[0].play()
             return `&#9989 CORRECT`;
           }
     };

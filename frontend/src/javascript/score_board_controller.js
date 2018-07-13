@@ -14,7 +14,7 @@ class ScoreBoardController {
           html += `
           <tr>
             <td>${score.username}</td>
-            <td>${score.total_points}</td>
+            <td>${score.username == 'angelina' ? "Jon Snow" : score.total_points}</td>
           </tr>
           `;
         };

@@ -1,19 +1,23 @@
 Rails.application.routes.draw do
+
   namespace :api do
     namespace :v1 do
       post 'scoreboards' => 'score_boards#create'
     end
   end
+
   namespace :api do
     namespace :v1 do
       post 'answers' => 'answers#create'
     end
   end
+
   namespace :api do
     namespace :v1 do
       post 'quizzes' => 'quizzes#show'
     end
   end
+
   namespace :api do
     namespace :v1 do
       get 'users/:username' => 'users#show'
