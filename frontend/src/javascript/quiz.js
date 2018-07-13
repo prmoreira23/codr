@@ -30,7 +30,10 @@ class Quiz {
           </div>
 
           <div class="quiz" id="quiz" data-toggle="buttons">`;
-          for(var choice of question.choices){
+          let shuttledArray = [...question.choices];
+          shuttledArray.sort(function() { return 0.5 - Math.random() });
+
+          for(var choice of shuttledArray){
             let i = question.choices.indexOf(choice);
             html += `<label class="element-animation${i+1} btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="${i}">${choice}</label>`;
           }

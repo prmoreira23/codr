@@ -1,4 +1,4 @@
-let address = "localhost:3000";
+let address = "10.39.108.209:3000";
 
 const BASE_URL_USERS = "http://"+address+"/api/v1/users/";
 const BASE_URL_QUIZZES = "http://"+address+"/api/v1/quizzes";

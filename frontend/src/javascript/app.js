@@ -42,6 +42,7 @@ class App {
       `
       let form = $.parseHTML(html);
       $("#content").append(form);
+      $("#form_username").focus();
       $(".login-form").fadeIn(1000, function(){
       $(".login-form").submit(function(event){
       // Login form submit
