@@ -19,7 +19,7 @@ class App {
       currentQuestion = 0;
       totalPoints = 0;
       $("#content").empty();
-      let welcomeH1 = $.parseHTML("<h1 id='welcome_message' class='mt-5' style='display: none;'>WELCOME</h1>");
+      let welcomeH1 = $.parseHTML("<h1 id='welcome_message' class='elegantshadow' style='display: none;'>WELCOME</h1>");
       $("#content").append(welcomeH1);
       var $welcomeMessage = $("#welcome_message");
       $welcomeMessage.fadeIn(1000, function(){
@@ -31,19 +31,19 @@ class App {
 
     static login(){
       let html = `
-      <div class="mt-5 form" style='display: none;'>
-      <form id="login_form" action="#" method="post">
-      <label>Username:
-      <input type="text" id="form_username" name="username" value="">
-      </label>
-      <button type="submit" name="button">Login</button>
-      </form>
+      <div class="login-page">
+        <div class="form">
+          <form class="login-form">
+            <input id="form_username" type="text" placeholder="username"/>
+            <button>login</button>
+          </form>
+        </div>
       </div>
       `
       let form = $.parseHTML(html);
       $("#content").append(form);
-      $(".form").fadeIn(1000, function(){
-      $(".form").submit(function(event){
+      $(".login-form").fadeIn(1000, function(){
+      $(".login-form").submit(function(event){
       // Login form submit
       let username = $("#form_username").val();
       Adapter.getUserByUsername(username)

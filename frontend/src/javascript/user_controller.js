@@ -59,6 +59,7 @@ function quizFunc(){
 class UserController {
 
   static startGame() {
+    $("#user_message").empty();
     let html = `
     <ul class="nav navbar-nav">
       <li><a href="#">${currentUser.message()}</a> </li>
@@ -97,7 +98,7 @@ class UserController {
     .then(scores => {
       var div = ScoreBoardController.renderScores(scores);
       $("#content").empty();
-      let header = $.parseHTML("<h1>Top 10 Scores</h1>");
+      let header = $.parseHTML("<h2>Top 10 Scores</h2>");
       let button = $.parseHTML("<button>Play Again?</button>");
       $("#content").append(header, div, button);
       $("button").on('click', function(){
